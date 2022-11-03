@@ -1,6 +1,5 @@
 name: pcyb
 description: pcyb
-
 publish_to: 'none'
 
 version: 1.0.0+1
@@ -13,8 +12,8 @@ dependencies:
   dio: ^4.0.4
   equatable: ^2.0.3
   firebase_auth: ^3.11.2
-  firebase_core_platform_interface:
   firebase_core: ^1.17.0
+  firebase_core_platform_interface: 4.5.1
   firebase_database: ^9.0.14
   fl_chart: ^0.55.2
   flutter:
