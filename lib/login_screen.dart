@@ -49,6 +49,7 @@ class LoginScreen extends HookWidget {
                   FormBuilderTextField(
                     name: 'email',
                     maxLength: 20,
+                    autocorrect: false,
                     decoration: InputDecoration(
                       counterText: '',
                       labelStyle: const TextStyle(color: Colors.black),
@@ -75,6 +76,7 @@ class LoginScreen extends HookWidget {
                     obscureText: true,
                     name: 'password',
                     maxLength: 20,
+                    autocorrect: false,
                     decoration: InputDecoration(
                       counterText: '',
                       labelStyle: const TextStyle(color: Colors.black),
@@ -112,7 +114,7 @@ class LoginScreen extends HookWidget {
             ),
           ),
         ),
-        if (context.read<AuthCubit>().state is AuthenticationInProgress)
+        if (context.watch<AuthCubit>().state is AuthenticationInProgress)
           const Center(
             child: CircularProgressIndicator(),
           ),

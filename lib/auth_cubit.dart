@@ -12,6 +12,16 @@ class AuthCubit extends Cubit<AuthState> {
     }
   }
 
+  Future<void> logOut() async {
+    try {
+      await auth.signOut();
+      emit(Unauthenticated());
+    } catch (err, st) {
+      print('Error: $err, $st');
+    }
+    
+  }
+
   Future<bool> logIn({
     required String email,
     required String password,
