@@ -1,13 +1,14 @@
 {
   "project_info": {
     "project_number": "116702106976",
+    "firebase_url": "https://pcyb-9a039-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "pcyb-9a039",
     "storage_bucket": "pcyb-9a039.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:116702106976:android:d11ded041489d5207f7a05",
+        "mobilesdk_app_id": "1:116702106976:android:22cf63edd5314a467f7a05",
         "android_client_info": {
           "package_name": "com.example.pcyb"
         }
@@ -31,7 +32,7 @@
               "client_type": 3
             },
             {
-              "client_id": "116702106976-et09cnnctshjprou0a04ra5ql4qk2r83.apps.googleusercontent.com",
+              "client_id": "116702106976-6a8utmu8dhkldd9nf896qdsfg5k1kv11.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
                 "bundle_id": "com.example.pcyb"

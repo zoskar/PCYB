@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pcyb/balance_cubit.dart';
 import 'package:pcyb/home_screen.dart';
 import 'package:pcyb/login_screen.dart';
 import 'package:pcyb/auth_cubit.dart';
@@ -10,10 +11,11 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final authCubit = AuthCubit()..init();
-
+    final balanceCubit = BalanceCubit();
     return MultiBlocProvider(
       providers: [
         BlocProvider<AuthCubit>.value(value: authCubit),
+        BlocProvider<BalanceCubit>.value(value: balanceCubit),
       ],
       child: MaterialApp(
         home: BlocBuilder<AuthCubit, AuthState>(
