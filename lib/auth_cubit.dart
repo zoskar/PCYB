@@ -8,7 +8,7 @@ class AuthCubit extends Cubit<AuthState> {
 
   void init() {
     if (auth.currentUser != null) {
-      emit(Authenticated());
+      emit(Authenticated(auth.currentUser?.email ?? ''));
     }
   }
 
@@ -19,7 +19,6 @@ class AuthCubit extends Cubit<AuthState> {
     } catch (err, st) {
       print('Error: $err, $st');
     }
-    
   }
 
   Future<bool> logIn({
@@ -34,7 +33,7 @@ class AuthCubit extends Cubit<AuthState> {
         password: password,
       );
 
-      emit(Authenticated());
+      emit(Authenticated(email));
 
       return true;
     } catch (err, st) {
@@ -48,7 +47,11 @@ class AuthCubit extends Cubit<AuthState> {
 
 abstract class AuthState {}
 
-class Authenticated extends AuthState {}
+class Authenticated extends AuthState {
+  Authenticated(this.email);
+
+  final String email;
+}
 
 class Unauthenticated extends AuthState {}
 

@@ -99,15 +99,24 @@ class LoginScreen extends HookWidget {
                       label: const Text('password'),
                     ),
                   ),
-                  ElevatedButton(
-                    child: const Text('Login'),
-                    onPressed: () => onPressedLogin(
-                      context,
-                      formKey,
-                      onError: () {
-                        isError.value = true;
-                      },
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: 40,
+                        width: 160,
+                        child: ElevatedButton(
+                          child: const Text('Login'),
+                          onPressed: () => onPressedLogin(
+                            context,
+                            formKey,
+                            onError: () {
+                              isError.value = true;
+                            },
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
