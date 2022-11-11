@@ -8,11 +8,11 @@ class BalanceCubit extends Cubit<BalanceState> {
   FirebaseAuth auth = FirebaseAuth.instance;
   final DatabaseReference _dataRef = FirebaseDatabase.instance.ref();
 
-  getBalance() async {
+  void getBalance() async {
     emit(FetchingInProgress());
 
     try {
-      DataSnapshot response = await _dataRef.child('Balance').get();
+      final response = await _dataRef.child('Balance').get();
       final data = response.value as dynamic;
       emit(FetchedBalance(balance: data.toDouble()));
     } catch (err, st) {
