@@ -5,18 +5,24 @@ import 'package:pcyb/app.dart';
 import 'package:pcyb/firebase_options.dart';
 
 void main() async {
+  String androidAppBase64Hash = 'ABKXbsa0jPzPssUVhItzvXP3gjoxhz41FfNRTICOJSY=';
+
   WidgetsFlutterBinding.ensureInitialized();
 
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
-  await initSecurity();
+  await initSecurity(androidAppBase64Hash);
 
   runApp(const App());
 }
 
-Future<void> initSecurity() async {
-  const config = TalsecConfig(
-    iosConfig: IOSconfig(
+Future<void> initSecurity(androidAppBase64Hash) async {
+   TalsecConfig config = TalsecConfig(
+    androidConfig: AndroidConfig(
+      expectedPackageName: 'com.example.pcyb',
+      expectedSigningCertificateHash: androidAppBase64Hash,
+    ),
+    iosConfig: const IOSconfig(
       appBundleId: 'com.example.pcyb',
       appTeamId: '92G85YJJ7B',
     ),
