@@ -1,7 +1,6 @@
 
 <br />
 
-
 ## About project
 
 This project was created for a university course "PCYB" at Warsaw University of Technology. It is a mobile app for Android and iOS made to implement and test In-App Protection SDK by [Talsec](https://www.talsec.app/).
@@ -50,8 +49,7 @@ Implemented freeRASP is capable of detecting and handling such threats as
 * Device lock
 
 ## Testing
-
-During the testing phase we managed to simulate 5 types of behaviours which the system detects. 
+Our testing was based on guidelines made by [OWASP Mobile Application Security](https://mas.owasp.org/) and described in [OWASP MASTG ebook](https://mas.owasp.org/MASTG/). During the testing phase we managed to simulate 5 types of behaviours which the system detects. 
 
 ### Root detection (Android emulator)
 
@@ -66,20 +64,20 @@ Since emulator alert is made not to make life hard for developers, it doesn't tr
 https://user-images.githubusercontent.com/29405522/213705086-c3ebce55-9cb5-4b24-9cd9-affa9955d890.mov
 
 
-### Detecting unofficial installation
+### Detecting unofficial installation (Android device)
 
 Since downloading APK file from the internet is counting as untrusted install all we had to do was installing APK file from previous test to device. This time we used real device.
 
 https://user-images.githubusercontent.com/29405522/213705567-228a3aff-1e34-4847-a59b-3ef9019bd260.mp4
 
 
-### App tampering detection
+### App tampering detection (Android device)
 
 To trigger this event we had to install the APP on device directly from IDE.
 
 https://user-images.githubusercontent.com/29405522/213706109-381a342f-9df6-4d72-812a-a4f2ebe85588.mov
 
-### Keystore/Keychain secure storage check
+### Keystore/Keychain secure storage check (iOS emulator)
 
 Xcode iOS emulators don't provide safety of real devices. When running our app on emulator the event is triggered instantly.
 
